@@ -43,7 +43,6 @@ def index(request):
         article_list = Article.objects.all().order_by("date_publish")
         article_list = getPage(request, article_list)
     except Exception as e:
-        print e
         logger.error(e)
     return render(request, 'index.html', locals())
 
